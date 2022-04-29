@@ -1,4 +1,4 @@
-# Note text
+# Text Note
 
 [![Up to Date](https://github.com/ikatyang/emoji-cheat-sheet/workflows/Up%20to%20Date/badge.svg)](https://github.com/duongnv-pro/README/actions)
 
@@ -17,11 +17,11 @@ sudo apt-get remove --auto-remove NameOfProgram
 
 Config Git SSH, #ssh, #git
 ```bash
-git config --global user.name "duongnv-2044"
-git config --global user.email "..@sun-asterisk.com"
+git config --global user.name "duongshiro"
+git config --global user.email "xxx@gmail.com"
 
 // Add new SSH
-ssh-keygen -t rsa -C "pa.staynight@gmail.com"
+ssh-keygen -t rsa -C "xxx@gmail.com"
     enter name:  /home/duongnv/.ssh/id_rsa_home
     copy content below
 cat ~/.ssh/id_rsa_home.pub
@@ -48,17 +48,17 @@ Host sun.github.com
 
 // Update remote project
 git remote
-git remote set-url framgia git@sun.github.com:framgia/DISCO-GC.git
+git remote set-url framgia git@sun.github.com:framgia/XXX.git
     note: sun.github.com
 ggpush // TEST OK?
 ```
 
-Clone DISCO
+Clone Project
 ```bash
-git clone git@github.com:duongbnv-2044/DISCO.git
-cd DISCO
+git clone git@github.com:../XXX.git
+cd App
 git remote -v
-git remote add framgia git@github.com:framgia/DISCO.git
+git remote add framgia git@github.com:framgia/XXX.git
 git fetch framgia --all
 ```
 
