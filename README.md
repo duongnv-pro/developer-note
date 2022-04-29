@@ -1,4 +1,4 @@
-# Note text
+# Text Note
 
 [![Up to Date](https://github.com/ikatyang/emoji-cheat-sheet/workflows/Up%20to%20Date/badge.svg)](https://github.com/duongnv-pro/README/actions)
 
