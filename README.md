@@ -4,6 +4,9 @@
 
 ## Table of Contents
 - [Docker](Docker/README.md)
+  - [Lí do tôi yêu Docker](Docker/docker_ep1.md)
+  - [Dockerize ứng dụng NodeJS](Docker/docker_ep2.md)
+  - [Dockerize ứng dụng Python, Flask](Docker/docker_ep3.md)
 - [Vistual Studio Code](Vistual%20Studio%20Code//README.md)
 - [Git](Git/README.md)
 - [Vim](Vim/README.md)
