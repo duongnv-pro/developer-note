@@ -1,5 +1,10 @@
 # Vistual Studio Code
-- [Back](../README.md)
+
+![](https://i.imgur.com/waxVImv.png)
+
+### [View all DevNotes](../README.md)
+
+![](https://i.imgur.com/waxVImv.png)
 
 #### Update Vistual Studio Code #update vs code
 ```bash
