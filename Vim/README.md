@@ -1,7 +1,15 @@
 # Vim - OMG
-- [Back](../README.md)
+
+![](https://i.imgur.com/waxVImv.png)
+
+### [View all DevNotes](../README.md)
+
+![](https://i.imgur.com/waxVImv.png)
+
 #### Modal edit
+
 ##### Normal mode
+
 - Don't use arrow keys
 - Don't use the mouse
 - > You're a programmer, strive to be lazy.
@@ -16,23 +24,29 @@
 - L - move cursor to the bottom of the window
 - gg - go to top of file
 - G - go to end of file
+
 ###### Text Object
+
 - w - word
 - s - sentences
 - p - paragraphs
 - t - tags
+
 ###### Motions
+
 - a - all
 - i - in
 - t - 'til
 - f - find forward
 - F - find backward
+
 ###### Commands
+
 - d - delete (also cut)
 - c - change (delete, them place in insert mode)
 - y - yank (copy)
 - v - visually select
->{command}{text object or motion}
+  > {command}{text object or motion}
 
 diw - delete in word
 caw - change all word
