@@ -35,6 +35,7 @@ Here is the list of available devnotes with more being actively worked upon.
 - [Git](Git/README.md)
 - [Vim](Vim/README.md)
 - [NextJS](Udemy/NextJS/README.md)
+- [Tmux Cheat Sheet & Quick Reference](Tmux/README.md)
 - [Temp](Temp/README.md)
 
 We have also added a new form of visual content covering best practices:
