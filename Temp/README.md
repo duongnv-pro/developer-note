@@ -4,7 +4,6 @@
 ### [View all DevNotes](../README.md)
 
 ![](https://i.imgur.com/waxVImv.png)
-
 ## Old DevNotes
 Remove program
 
