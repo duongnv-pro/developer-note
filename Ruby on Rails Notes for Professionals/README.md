@@ -1508,7 +1508,8 @@ So, How It Works This is fantastically easy. Each bit of the configuration does 
 - notifempty – Don’t rotate the file if the logs are empty
 - copytruncate – Copy the log file and then empties it. This makes sure that the log file Rails is writing to always exists so you won’t get problems because the file does not actually change. If you don’t use this, youwould need to restart your Rails application each time
 
-**Running Logrotate** Since we just wrote this configuration, you want to test it.
+**Running Logrotate**
+Since we just wrote this configuration, you want to test it.
 To run logrotate manually, just do: `sudo /usr/sbin/logrotate -f /etc/logrotate.conf`
 
 ### Chapter 35: Prawn PDF
@@ -2165,10 +2166,15 @@ user = build(:user)
 #### Section 57.1: If you want to keep your code maintainable,secure and optimized, look at some gems for codeoptimization and cleanup :
 
 **Bullet**
+
 This one particularly blew my mind. The bullet gem helps you kill all the N+1 queries, as well as unnecessarily eager loaded relations. Once you install it and start visiting various routes in development, alert boxes with warnings indicating database queries that need to be optimized will pop out. It works right out of the box and is extremely helpful for optimizing your application.
+
 **Rails Best Practices**
+
 Static code analyzer for finding Rails specific code smells. It offers a variety of suggestions; use scope access, restrict auto-generated routes, add database indexes, etc. Nevertheless, it contains lots of nice suggestions that will give you a better perspective on how to re-factor your code and learn some best practices.
+
 **Rubocop**
+
 A Ruby static code analyzer which you can use to check if your code complies with the Ruby community code guidelines. The gem reports style violations through the command line, with lots of useful code refactoring goodies such as useless variable assignment, redundant use of Object#to_s in interpolation or even unused methodargument.
 It's divided into 4 sub-analyzers (called cops): Style, Lint, Metrics and Rails.
 
