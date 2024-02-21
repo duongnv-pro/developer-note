@@ -36,6 +36,7 @@ Here is the list of available devnotes with more being actively worked upon.
 - [Vim](Vim/README.md)
 - [NextJS](Udemy/NextJS/README.md)
 - [Ruby on Rails Notes for Professionals](Ruby%20on%20Rails%20Notes%20for%20Professionals/README.md)
+- [React JS Notes for Professionals](React%20JS%20Notes%20for%20Professionals/README.md)
 - [Tmux Cheat Sheet & Quick Reference](Tmux/README.md)
 - [Temp](Temp/README.md)
 
