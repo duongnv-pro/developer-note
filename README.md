@@ -33,6 +33,7 @@ Here is the list of available devnotes with more being actively worked upon.
 - [Docker](Docker/README.md)
 - [Vistual Studio Code](Vistual%20Studio%20Code//README.md)
 - [Git](Git/README.md)
+- [Postman](Postman/README.md)
 - [Vim](Vim/README.md)
 - [NextJS](Udemy/NextJS/README.md)
 - [NestJS Zero to Hero – Modern TypeScript Back-end Development](NestJS%20Zero%20to%20Hero%20–%20Modern%20TypeScript%20Back-end%20Development/README.md)
