@@ -38,6 +38,7 @@ Here is the list of available devnotes with more being actively worked upon.
 - [NextJS](Udemy/NextJS/README.md)
 - [NestJS Zero to Hero – Modern TypeScript Back-end Development](NestJS%20Zero%20to%20Hero%20–%20Modern%20TypeScript%20Back-end%20Development/README.md)
 - [Ruby on Rails Notes for Professionals](Ruby%20on%20Rails%20Notes%20for%20Professionals/README.md)
+- [React JS Notes for Professionals](React%20JS%20Notes%20for%20Professionals/README.md)
 - [Tmux Cheat Sheet & Quick Reference](Tmux/README.md)
 - [Temp](Temp/README.md)
 
