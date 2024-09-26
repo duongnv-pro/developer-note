@@ -256,3 +256,150 @@ Install mailhog #mailhog
 sudo apt-get -y install golang-go
 go get github.com/mailhog/MailHog
 ```
+
+## 11 Tips To Maximize the Power of TypeScript’s Type System
+
+### Think in {Set}
+
+```typescript
+type Measure = { radius: number };
+type Style = { color: string };
+
+// typed { radius: number; color: string }
+type Circle = Measure & Style;
+```
+
+```typescript
+type ShapeKind = 'rect' | 'circle';
+let foo: string = getSomeString();
+let shape: ShapeKind = 'rect';
+
+// disallowed because string is not subset of ShapeKind
+shape = foo;
+
+// allowed because ShapeKind is subset of string
+foo = shape;
+```
+
+### Use Discriminated Union Instead of Optional Fields
+```typescript
+type Shape = {
+  kind: 'circle' | 'rect';
+  radius?: number;
+  width?: number;
+  height?: number;
+}
+
+function getArea(shape: Shape) {
+  return shape.kind === 'circle' ?
+    Math.PI * shape.radius! ** 2
+    : shape.width! * shape.height!;
+}
+```
+The non-null assertions (when accessing radius, width, and height fields) are needed because there’s no established relationship between kind and other fields. Instead, a discriminated union is a much better solution. Here’s what that looks like:
+
+```typescript
+type Circle = { kind: 'circle'; radius: number };
+type Rect = { kind: 'rect'; width: number; height: number };
+type Shape = Circle | Rect;
+
+function getArea(shape: Shape) {
+  return shape.kind === 'circle' ?
+    Math.PI * shape.radius ** 2
+    : shape.width * shape.height;
+}
+```
+
+### Stay DRY By Being Creative With Type Manipulation
+Instead of duplicating field declarations,
+```typescript
+type User = {
+    age: number;
+    gender: string;
+    country: string;
+    city: string
+};
+type Demographic = { age: number: gender: string; };
+type Geo = { country: string; city: string; };
+```
+use the `Pick` utility to extract new types:
+
+```typescript
+type User = {
+    age: number;
+    gender: string;
+    country: string;
+    city: string
+};
+type Demographic = Pick<User, 'age'|'gender'>;
+type Geo = Pick<User, 'country'|'city'>;
+```
+
+Instead of duplicating the function’s return type,
+```typescript
+function createCircle() {
+    return {
+        kind: 'circle' as const,
+        radius: 1.0
+    }
+}
+
+function transformCircle(circle: { kind: 'circle'; radius: number }) {
+    ...
+}
+
+transformCircle(createCircle());
+```
+use `ReturnType<T>` to extract it:
+```typescript
+function createCircle() {
+    return {
+        kind: 'circle' as const,
+        radius: 1.0
+    }
+}
+
+function transformCircle(circle: ReturnType<typeof createCircle>) {
+    ...
+}
+
+transformCircle(createCircle());
+```
+
+Instead of synchronizing shapes of two types (typeof config and Factory here) in parallel,
+```typescript
+type ContentTypes = 'news' | 'blog' | 'video';
+
+// config for indicating what content types are enabled
+const config = { news: true, blog: true, video: false }
+    satisfies Record<ContentTypes, boolean>;
+
+// factory for creating contents
+type Factory = {
+    createNews: () => Content;
+    createBlog: () => Content;
+};
+```
+use `Mapped Type` and `Template Literal` Type to automatically infer the proper factory type based on the shape of config:
+
+```typescript
+type ContentTypes = 'news' | 'blog' | 'video';
+
+// generic factory type with a inferred list of methods
+// based on the shape of the given Config
+type ContentFactory<Config extends Record<ContentTypes, boolean>> = {
+    [k in string & keyof Config as Config[k] extends true
+        ? `create${Capitalize<k>}`
+        : never]: () => Content;
+};
+
+// config for indicating what content types are enabled
+const config = { news: true, blog: true, video: false }
+    satisfies Record<ContentTypes, boolean>;
+
+type Factory = ContentFactory<typeof config>;
+// Factory: {
+//     createNews: () => Content;
+//     createBlog: () => Content;
+// }
+```
